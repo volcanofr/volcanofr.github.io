@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petits chevaux</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            max-height: 100vh;
+            width: 100vh;
+            background-image: url('./terrain.png');
+        }
+
+        .hide {
+            visibility: hidden;
+        }
+
+        .chevaux {
+            position: relative;
+            height: 90vh;
+        }
+
+        .cheval {
+            position: absolute;
+        }
+
+        .titre {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5vw;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(255, 0, 0, 0.50);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", () => {
+            a=1;
+            let i = 0;
+            if (a) {
+                setInterval(() => {
+                    if (!i) {
+                        let cheval = (Math.floor(Math.random() * 4) + 1);
+                        let pixel = (Math.floor(Math.random() * 2) + 1);
+
+                        var chevalElement = document.getElementById(cheval);
+
+                        let current = parseInt(chevalElement.style.left);
+
+                        chevalElement.style.left = current + pixel + "px"; 
+
+                        if (parseInt(chevalElement.style.left) >= 1350) {
+                            document.getElementById("titre").innerHTML = `Cheval n°${cheval} a gagné !`;
+                            i++;
+                        }
+                    }
+                }, 5);
+            };
+        });
+    </script>
+</head>
+<body>
+    <div class="chevaux">
+        <img class="cheval" src="./assets/cheval1.png" alt="1" id="1" style="left: 0px; top: -10%;">
+        <img class="cheval" src="./assets/cheval2.png" alt="2" id="2" style="left: 0px; top: 10%;">
+        <img class="cheval" src="./assets/cheval3.png" alt="3" id="3" style="left: 0px; top: 30%;">
+        <img class="cheval" src="./assets/cheval4.png" alt="4" id="4" style="left: 0px; top: 50%;">
+    </div>
+    <p class="titre" id="titre"></p>
+    <audio controls loop autoplay class="hide">
+        <source src="assets/chevaux.mp3" type="audio/mpeg">
+    </audio>
+</body>
+</html>
