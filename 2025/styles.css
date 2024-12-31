@@ -1,0 +1,58 @@
+:root {
+	--color-dark: rgb(18, 18, 18);
+	--color-light: rgb(255, 255, 255);
+
+	color-scheme: dark;
+}
+
+html, body {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	overflow: hidden;
+	margin: 0;
+	border: 0;
+	padding: 0;
+
+	background-color: var(--color-dark);
+	color: var(--color-light);
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 1.5em;
+	font-weight: 500;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transition: background ease-in 9s, color ease-in 9s;
+}
+
+body>span {
+	z-index: 99;
+}
+
+#text {
+	font-size: 0.8em;
+}
+
+#time {
+	margin-top: 0.5em;
+}
+
+#event {
+	font-size: 1.5em;
+	margin: 0 2em;
+}
+
+#particles {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
