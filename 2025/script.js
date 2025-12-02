@@ -111,12 +111,12 @@ function updateCountdown() {
 	const secondsEl = document.getElementById('seconds');
 	const secondsPlurialEl = document.getElementById('seconds-plurial');
 
-	const newYear = new Date('1/01/2025').getTime();
+	const newYear = new Date('1/01/2026').getTime();
 	const currentTime = new Date().getTime();
 	const diffTime = newYear - currentTime;
 
 	if (diffTime <= 0) {
-		document.body.innerHTML = '<span id="event">Merveilleuse année 2025 à vous !</span>';
+		document.body.innerHTML = '<span id="event">Merveilleuse année 2026 à vous !</span>';
 		return false;
 	} else {
 		const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -173,4 +173,5 @@ function updateCountdown() {
 			seconds
 		}
 	}
+
 }
